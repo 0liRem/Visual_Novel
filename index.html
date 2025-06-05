@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Glory</title>
+    <link rel="stylesheet" href="styles/stylemenu.css">
+    <!--imagen cabezera-->
+	<link rel="icon" type="image/png" href="">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="assets/Video/TEST.mp4" type="video/mp4">
+        </video>
+    </div>
+    <header>
+    </header>
+
+    <main>
+        <section class="menu">
+            <h2>Magical Glory</h2>
+            <ul>
+                <li><a href="paginas/historia.html">Inicio</a></li>
+                <li><a href="paginas/extras.html">Extras</a></li>
+                <li><a href="paginas/creditos.html">Créditos</a></li>
+            </ul>
+        </section>
+    </main>
+    <div class="audio-control">
+        <button id="audio-button" onclick="">
+            <img id="audio-icon" src="assets/icons/mute.png" alt="Mute"> 
+        </button>
+    </div>
+
+    <!-- Audio de fondo -->
+    <audio id="background-audio" loop>
+        <source src="assets/Music/ヴォーパル.ogg" type="audio/ogg">
+        
+    </audio>
+    <footer class="pie">
+        <p>Olivier Viau 23544</p>
+        <a href="https://github.com/0liRem/WebLab3">Github</a>
+    </footer>
+</body>
+<script>
+    const audio = document.getElementById('background-audio');
+    const audioButton = document.getElementById('audio-button');
+    const audioIcon = document.getElementById('audio-icon');
+
+    // Inicia con el audio muteado
+    audio.muted = true;
+
+    audioButton.addEventListener('click', () => {
+        if (audio.paused) {
+            // Si el audio está pausado, lo reproduce y desmutea
+            audio.play();
+            audio.muted = false;
+            audioIcon.src = "assets/icons/unmute.png"; // Cambia a la imagen de altavoz activo
+        } else if (audio.muted) {
+            // Si el audio está muteado, lo desmutea
+            audio.muted = false;
+            audioIcon.src = "assets/icons/unmute.png"; // Cambia a la imagen de altavoz activo
+        } else {
+            // Si el audio está reproduciéndose, lo mutea
+            audio.muted = true;
+            audioIcon.src = "assets/icons/mute.png"; // Cambia a la imagen de altavoz muteado
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,127 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2a2a40;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #262336;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #f3a21e;
+}
+
+article {
+    padding: 20px;
+    background-color: #2a2a40;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+article h2 {
+    color: #f3a21e;
+    text-align: center;
+    
+}
+
+figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+figure img {
+    border-radius: 10px;
+    border: 2px solid #ff6f61;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #f3a21e;
+}
+
+aside {
+    background-color: #2a2a40;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+aside h3 {
+    color: #ffffff;
+}
+
+footer {
+    background-color: #2a2a40;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.audio-control {
+    position: fixed; /* Fija el botón en la pantalla */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    left: 20px; /* Distancia desde la izquierda */
+    z-index: 3; /* Asegura que esté por encima de otros elementos */
+}
+
+#audio-button {
+    background-color: rgba(42, 42, 64, 0.8); /* Fondo semi-transparente */
+    border: none;
+    border-radius: 50%; /* Botón circular */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#audio-button:hover {
+    background-color: rgba(255, 111, 97, 0.8); /* Cambia el color al pasar el puntero */
+}
+
+#audio-button img {
+    width: 24px; /* Tamaño de la imagen */
+    height: 24px;
+}

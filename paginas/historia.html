@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novela Visual</title>
+    <link rel="stylesheet" href="../styles/stylehistoria.css">
+</head>
+<body>
+    <div class="menu-button">
+        <a href="../index.html">Menú</a>
+    </div>
+
+    <div class="story-container">
+        <div class="background" id="background" >
+            <img id="background-image">
+        </div>
+        <div class="character1" id="characters">
+            <img id="character1" class="character-sprite" >
+        </div>
+        <div class="character2">
+            <img id="character2" class="character-sprite" >
+        </div>
+        <div class="dialogue-box" id="dialogue-box">
+            <div class="characterName">
+                <p id="name-text"></p>
+            </div>
+            <p id="dialogue-text">Magical glory</p>
+        </div>
+        <div id="botones" class="hidden">
+            <button id="button1" class="boton"></button>
+            <button id="button2" class="boton"></button>
+        </div>
+    </div>
+
+    <div class="audio-control">
+        <button id="audio-button">
+            <img id="audio-icon" src="../assets/icons/mute.png" alt="Audio">
+        </button>
+    </div>
+
+    <div class="save-control">
+        <button id="charge-button">
+            <p>Cargar</p>
+        </button>
+        <button id="save-button">
+            <p>guardar</p>
+        </button>
+        <button id="reset-button">
+            <p>reiniciar</p>
+        </button>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: 'MedievalSharp', 'Times New Roman', serif;
+}
+
+.menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(42, 42, 64, 0.8);
+    width:50px;
+    height:20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.menu-button a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+.menu-button:hover{
+    background-color: #0056b3; /* Color al pasar el mouse */
+}
+.hidden {
+    display: none;
+}
+.story-container {  
+    position: relative;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d1d246e;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.character1 {
+    position: absolute;
+    width: 10%;
+    height: 60%;
+    display: flex;
+    bottom: -100px;
+    left:10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.character2 {
+    position: absolute;
+    width: 10%;
+    height: 60%;
+    display: flex;
+    bottom: -100px;
+    right: 10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+#background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
+}
+
+
+.dialogue-box {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    padding: 20px;
+    background-color: #0c0802b9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#dialogue-text {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#botones {
+    position: absolute;
+    bottom:50%;
+    width: 20%;
+    padding: 20px;
+    background-color: #0c0802b9;
+    border-radius: 10px;
+    text-align: center;
+}
+.boton{
+    border: none;
+    background-color: rgba(0, 0, 0, 0.562);
+}
+.boton:hover{
+    background-color: rgba(23, 27, 29, 0.404); 
+}
+
+
+.characterName {
+    position: absolute;
+    top: -10px; /* Ajusta para que quede fuera del cuadro de diálogo */
+    left: 0px; /* Ajusta para que quede fuera del cuadro de diálogo */
+    width:20%; /* Tamaño del cuadro en la esquina */
+    height: 30px; /* Tamaño del cuadro en la esquina */
+    background-color: #0c0802b9; /* Color de fondo del cuadro */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #f8f8f8; /* Borde opcional */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    font-size: 20px; /* Tamaño del texto reducido */
+    overflow: hidden; /* Evita que el texto se desborde */
+    box-sizing: border-box; /* Asegura que el borde no afecte el tamaño */
+}
+#name-text {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.audio-control {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+#audio-button {
+    background-color: rgba(42, 42, 64, 0.8); /* Fondo semi-transparente */
+    border: none;
+    border-radius: 50%; /* Botón circular */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#audio-button img {
+    width: 24px;
+    height: 24px;
+}
+#audio-button:hover {
+    background-color: #0e0f0f80; /* Color al pasar el mouse */
+}
+/*SAVE*/
+.save-control {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex; /* Activa flexbox */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+#save-button {
+    background-color: rgba(42, 42, 64, 0.8); /* Fondo semi-transparente */
+    border: none;
+    border-radius: 50%; /* Botón circular */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#reset-button {
+    background-color: rgba(42, 42, 64, 0.8); /* Fondo semi-transparente */
+    border: none;
+    border-radius: 50%; /* Botón circular */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#charge-button {
+    background-color: rgba(42, 42, 64, 0.8); /* Fondo semi-transparente */
+    border: none;
+    border-radius: 50%; /* Botón circular */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#save-button:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+}
+#charge-button:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+}
+#reset-button:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+}
+.story-container {
+    background-color: rgba(26, 18, 11, 0.8);
+    border: 3px solid #5e3c20;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.dialogue-box {
+    background-color: rgba(42, 30, 21, 0.9);
+    border: 2px solid #d4af37;
+    font-size: 1.2em;
+}
+
+.characterName {
+    background-color: #5e3c20;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.boton {
+    background-color: #5e3c20;
+    color: #e5d9b6;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #3a2415;
+    cursor: pointer;
+}
+
+/* Para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    .character1, .character2 {
+        width: 40%; /* Personajes más anchos en móviles */
+        height: 50%;
+    }
+    
+    .character1 {
+        left: 5%;
+    }
+    
+    .character2 {
+        right: 5%;
+    }
+}
+
+/* Para pantallas muy grandes */
+@media (min-width: 1600px) {
+    .character1, .character2 {
+        width: 25%; /* Personajes más estrechos en pantallas grandes */
+        height: 70%;
+    }
+}
+.dialogue-box {
+    position: absolute;
+    width: 80%;
+    max-width: 800px; /* Máximo ancho para no estirarse demasiado */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%; /* Posición desde abajo en porcentaje */
+    padding: 2%; /* Padding relativo */
+}
