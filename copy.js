@@ -19,6 +19,7 @@
 //../assets/Characters/Liora_sprite1.png
 //../assets/Characters/Kaelith_sprite1.png
 //../assets/Characters/Thalia_sprite1.png
+//../assets/Characters/Callin_sprite1.png
 
 {
     tree:[

@@ -67,6 +67,20 @@ function escena() {
     }
     //Vifurcación
     if(scene[currentScene].tree!="" && scene[currentScene].tree!=null){
+        if(scene[currentScene].tree[datos[1][datos[2]-1]-1].cancion && scene[currentScene].tree[datos[1][datos[2]-1]-1].cancion !== "") {
+        audio.pause();
+        audio.currentTime = 0;
+        ad=false;
+        if(audio.muted){
+            ad=true;
+        }
+        audio = new Audio(scene[currentScene].tree[datos[1][datos[2]-1]-1].cancion);
+        audio.loop = true;
+        audio.play();
+        if(ad){
+            audio.muted=true;
+        }
+    }    
     if (scene[currentScene].tree[datos[1][datos[2]-1]-1].affection!="" && scene[currentScene].tree[datos[1][datos[2]-1]-1].affection!=null){
         if(scene[currentScene].tree[datos[1][datos[2]-1]-1].affection==1){
             datos[4]+=1
@@ -496,7 +510,7 @@ const scene=[
     text: "Ya es el quinto día, deberíamos estar llegando a la posada ”última parada” en la noche.",
     background: "../assets/Background/Routes.png",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },
 {
@@ -512,7 +526,7 @@ const scene=[
     text: "Dentro de poco va a oscurecer, nos deberíamos detener, ¿no crees Cavne?",
     background: "../assets/Background/Routes.png",
     character1: "",
-    character2: "Arlyse",
+    character2:"../assets/Characters/Arlyse_sprite2.png",
     choices:[]
 },
 {
@@ -528,7 +542,7 @@ const scene=[
     text: "¡Cavne, es de mala educación ignorar a los mayores!",
     background: "../assets/Background/Routes.png",
     character1: "",
-    character2: "Arlyse",
+    character2:"../assets/Characters/Arlyse_sprite2.png",
     choices:[]
 },
 {
@@ -560,7 +574,7 @@ const scene=[
     text: "¿¡Tú no tienes hambre, maga!?",
     background: "../assets/Background/Routes.png",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },
 {
@@ -584,7 +598,7 @@ const scene=[
     text: "¡Ya la oiste Cavne un poco más adelante hay una pequeña planicie, acamparemos ahí!",
     background: "../assets/Background/Routes.png",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },
 {
@@ -639,11 +653,12 @@ const scene=[
     text: "Ey Maga! Thalia va a ir a cazar un animal para el guiso y Liora va a ir a recolectar hierbas silvestres, es mejor si no dejamos a nadie solo. Así que ¿A quién quieres acompañar?",
     background: "../assets/Background/Froest.jpg",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:["Thalia","Liora"]
 },
 //Decision 1
 {
+    cancion:"../assets/Music/不思議の国.ogg",
     tree:[
         {    
         name: "Kaelith",
@@ -656,7 +671,7 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Antes de partir, Callin se acercó a susurrarme algo, no era normal viniendo de él. ",
-        background: "../assets/Background/",
+        background: "../assets/Background/Froest.jpg",
         character1: "",
         character2: "",
         choices:[],
@@ -668,16 +683,16 @@ const scene=[
         {    
         name: "Callin",
         text: " Maga, intenta llevarte bien con Thalia, no lo ha tenido fácil, pero no intentes indagar donde no te llaman.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Froest.jpg",
         character1: "",
-        character2: "Callin",
+        character2:"../assets/Characters/Callin_sprite1.png",
         choices:[]},
         {    
         name: "Callin",
         text: "Puedes intentar calmar a Liora, no es una mala chica, pero a simple vista se puede ver que la iglesia la ha mimado mucho.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Froest.jpg",
         character1: "",
-        character2: "Callin",
+        character2:"../assets/Characters/Callin_sprite1.png",
         choices:[]}
     ]
 },
@@ -686,14 +701,14 @@ const scene=[
         {    
         name: "Kaelith",
         text: "No me extraña, muchos aventureros son huérfanos, malandros y renegados. Aunque tomare en cuenta su consejo no me conviene tener una mala relación con una compañera.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Froest.jpg",
         character1: "",
         character2: "",
         choices:[]},
         {    
         name: "Kaelith",
         text: "Vere que puedo hacer, no prometo nada.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Froest.jpg",
         character1:"../assets/Characters/Kaelith_sprite1.png",
         character2: "",
         choices:[]}
@@ -704,14 +719,14 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Entiendo.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Froest.jpg",
         character1:"../assets/Characters/Kaelith_sprite1.png",
         character2: "",
         choices:[]},
         {            
         name: "Kaelith",
         text: "No sé qué me impulso acompañar a Liora, aun sabiendo como era, pero es una oportunidad que no puedo dejar pasar, la iglesia busca muchos magos para sus instalaciones, tal vez si me llevo bien con ella no necesite esta investigación y pueda largarme de esa ciudad.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Froest.jpg",
         character1: "",
         character2: "",
         choices:[]}
@@ -723,14 +738,14 @@ const scene=[
         {    
         name: "Thalia",
         text: "El sol se va a poner, será mejor apresurarnos.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Froest.jpg",
         character1: "",
         character2: "../assets/Characters/Thalia_sprite1.png",
         choices:[]},
         {    
         name: "Kaelith",
         text: "Tras caminar lo que fueron 20 minutos por el bosque. 20 minutos que parecieron una eternidad, con Liora presumiendo y predicando la palabra del Santísimo. Llegamos a un espacio sin árboles. Un lugar lleno de hierbas y flores, perfecto para condimentar el guiso.",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
         character2: "",
         choices:[]}
@@ -741,14 +756,14 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Voy detrás de ti.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Froest.jpg",
         character1:"../assets/Characters/Kaelith_sprite1.png",
         character2: "",
         choices:[]},
         {    
         name: "Liora",
         text: "Plebeya, recoge las hierbas.",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
         character2: "../assets/Characters/Liora_sprite1.png",
         choices:[]
@@ -761,14 +776,14 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Tras adentrarnos al bosque Thalia iba preparando unas pequeñas trampas, estoy segura que son para atrapar animales pequeños como conejos o roedores.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1: "",
         character2: "",
         choices:[]},
         {    
         name: "Kelith",
         text: "Que está hablando, a quien cree que se refiere, insoportable.",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
         character2: "",
         choices:[]}
@@ -779,16 +794,16 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Aunque me gusta el silencio el ambiente entre las dos es muy pesado Thalia está en su propio mundo, realmente no sé si fue la opción correcta acompañarla, aunque en comparación con la paladina… Dejando eso de un lado el silencio se vio interrumpido con el sonido de ramas rompiéndose, no muy lejos de donde estábamos.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1: "",
         character2: "",
         choices:[]},
         {    
         name: "Liora",
         text: "¡Plebeya no me oíste!",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
-        character2: "",
+        character2: "../assets/Characters/Liora_sprite1.png",
         choices:[]}
     ]
 },
@@ -797,17 +812,18 @@ const scene=[
         {    
         name: "Thalia",
         text: "Sígueme, no te hagas de notar.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1: "",
         character2: "../assets/Characters/Thalia_sprite1.png",
         choices:[]},
         {    
         name: "Kaelith",
         text: "Deberías cuidar tus palabras",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1:"../assets/Characters/Kaelith_sprite1.png",
         character2: "",
-        choices:[]}
+        choices:[],
+        cancion:"../assets/Music/ビク.ogg"}
     ]
 },
 {
@@ -815,14 +831,14 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Entendido.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1:"../assets/Characters/Kaelith_sprite1.png",
         character2: "",
         choices:[]},
         {    
         name: "Liora",
         text: "Ehhhh a quien le hablas con ese tono plebeya, no sabes que estas ante la enviada del Santísimo, crees que puedes hablarme así y salir impune.",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
         character2: "../assets/Characters/Liora_sprite1.png",
         choices:[]}
@@ -833,14 +849,14 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Tras caminar escondidas, logramos vislumbrar lo que parece ser un venado. Un precioso animal de pelaje marrón con manchas blancas y se encontraba a escasos metros de nosotras, pastando.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1: "",
         character2: "",
         choices:[]},
         {    
         name: "Kaelith",
         text: "Aquí no llega el poder de la iglesia, ¿Segura que quieres jugar a ese juego?",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1:"../assets/Characters/Kaelith_sprite1.png",
         character2: "",
         choices:[]}
@@ -851,14 +867,14 @@ const scene=[
         {    
         name: "Thalia",
         text: "Ahí tenemos la cena.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1: "",
         character2: "../assets/Characters/Thalia_sprite1.png",
         choices:[]},
         {    
         name: "Kaelith",
         text: "Tras terminar de hablar, Liora desenvaino su espada, preparada para pelear, nunca me ha gustado la violencia, pero necesito encontrar una solución para evitar la confrontación. A pesar de conocer magia, ha esta distancia ella tiene las de ganar, más si es capaz de utilizar castigo divino. ",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
         character2: "",
         choices:[]}
@@ -869,14 +885,14 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Thalia me hace señales indicandome un árbol cercano, haciendo de apoyo la ayudo a subir al árbol para que tenga un mejor angulo. Tras subir al árbol cercano, Thalia saco su arco corto y apunto hacia el venado, yo me mantuve oculta tras unos arbustos, preparada para lanzar un hechizo para inmovilizar al animal si algo salía mal. Pero antes de que Thalia disparara un fuerte sonido proveniente de no muy lejos de donde estábamos alerto al venado ahuyentándolo",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1: "",
         character2: "",
         choices:[]},
         {    
         name: "Kaelith",
         text: "No tenía muchas opciones, el sol se estaba poniendo y la situación era tensa, Liora esperaba que actuara o dijera algo antes de intentar ni un movimiento. Ahí fue cuando recordé algo…",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
         character2: "",
         choices:[]}
@@ -887,14 +903,14 @@ const scene=[
         {    
         name: "Thalia",
         text: "Que lastima…",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1: "",
         character2: "../assets/Characters/Thalia_sprite1.png",
         choices:[]},
         {    
         name: "Kaelith",
         text: "En un abrir y cerrar de ojos agarre mi varita, rápidamente invoque una pequeña llovizna encima de nosotras. Liora que había saltado hacia mí se quedó perpleja con el filo de su espada en mi cuello, al ver hacía arriba…",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
         character2: "",
         choices:[]}
@@ -905,14 +921,14 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Bueno, no hay nada que podamos hacer…",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1:"../assets/Characters/Kaelith_sprite1.png",
         character2: "",
         choices:[]},
         {    
         name: "Kaelith",
         text: "Se había formado un precioso arcoíris sobre nosotras, Liora se detuvo inmediatamente y dejo caer su espada, mientras veía estupefacta el paisaje recién formado.",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
         character2: "",
         choices:[]}
@@ -923,14 +939,14 @@ const scene=[
         {    
         name: "Thalia",
         text: "Voy a revisar las trampas, tu ve a las del oeste.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1: "",
         character2: "../assets/Characters/Thalia_sprite1.png",
         choices:[]},
         {    
         name: "Liora",
         text: "Gracias…",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
         character2: "../assets/Characters/Liora_sprite1.png",
         choices:[]}
@@ -941,14 +957,14 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Entendido.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Forest2.png",
         character1:"../assets/Characters/Kaelith_sprite1.png",
         character2: "",
         choices:[]},
         {    
         name: "Kaelith",
         text: "Mi corazón no deja de latir tan fuerte que todo a mi alrededor parece esfumarse, solo voy a descansar un momento. ",
-        background: "../assets/Background/",
+        background: "../assets/Background/flower.png",
         character1: "",
         character2: "",
         choices:[]}
@@ -959,15 +975,15 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Tras una media hora, regresamos al campamento, logramos atrapar dos conejos con las trampas, aunque no fuera tan bueno como un venado, conseguimos apaciguar a Liora, la cual se miraba más contenta al terminar de comer el guiso.",
-        background: "../assets/Background/",
+        background: "../assets/Background/campsite.jpg",
         character1: "",
         character2: "",
-        choices:[],
-        plus:5},
+        choices:[]
+        },
         {    
         name: "Kaelith",
         text: "Empiezo a abrir lentamente los ojos, no siento que este acostada sobre aquel precioso campo de flores, cuando veo alrededor mío estoy dentro de la tienda de acampar que monto Cavne horas antes.",
-        background: "../assets/Background/",
+        background: "../assets/Background/campsite.jpg",
         character1: "",
         character2: "",
         choices:[]}
@@ -981,11 +997,12 @@ const scene=[
         background: "../assets/Background/",
         character1: "",
         character2: "",
-        choices:[]},
+        choices:[],
+        plus:4},
         {    
         name: "Kaelith",
         text: "Todavía un poco desorientada logro ver que a mi derecha esta Liora.",
-        background: "../assets/Background/",
+        background: "../assets/Background/campsite.jpg",
         character1: "",
         character2: "",
         choices:[]}
@@ -1003,7 +1020,7 @@ const scene=[
         {    
         name: "Liora",
         text: "Lo sie… lo siento, en serio y… gracias…",
-        background: "../assets/Background/",
+        background: "../assets/Background/campsite.jpg",
         character1: "",
         character2: "../assets/Characters/Liora_sprite1.png",
         choices:[]}
@@ -1021,7 +1038,7 @@ const scene=[
         {    
         name: "Kaelith",
         text: "No sé qué está hablando Liora, no sé qué paso, no debería agradecerme, estoy confundida, prefiero no seguir indagando en el tema, aunque parece que Liora no tiene esa actitud engreída que mantuvo los últimos días.",
-        background: "../assets/Background/",
+        background: "../assets/Background/campsite.jpg",
         character1: "",
         character2: "",
         choices:[]}
@@ -1039,7 +1056,7 @@ const scene=[
         {    
         name: "Liora",
         text: " Todavía no está lista la comida… deberíamos salir a ayudar.",
-        background: "../assets/Background/",
+        background: "../assets/Background/campsite.jpg",
         character1: "",
         character2: "../assets/Characters/Liora_sprite1.png",
         choices:[]}
@@ -1051,12 +1068,13 @@ const scene=[
     background: "../assets/Background/",
     character1: "",
     character2: "",
-    choices:[]
+    choices:[],
+    cancion:"../assets/Music/時計塔.ogg"
 },
 {
     name: "Kaelith",
     text: "Tras 2 días llegamos a Ouphix, al pequeño campamento, este está formado de un edificio de madera y ladrillos, tiene 3 pisos y está bien cuidado, parece que no está en el fin del mundo, hasta puedo decir que parece un hostal de la mayor calidad, no tiene nada que envidiar a los de las grandes ciudades. ",
-    background: "../assets/Background/",
+    background: "../assets/Background/Inn2.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1064,23 +1082,23 @@ const scene=[
 {
     name: "Gerente",
     text: " Bienvenidos a La Ultima parada, en que los puedo ayudar.",
-    background: "../assets/Background/",
-    character1: "Gerente",
+    background: "../assets/Background/Inn.jpg",
+    character1: "",
     character2: "",
     choices:[]
 },
 {
     name: "Callin",
     text: "BUEN DÍA NECESITAMOS HOSPEDAJE PARA 6 PERSONAS…",
-    background: "../assets/Background/",
+    background: "../assets/Background/Inn.jpg",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },
 {
     name: "Kaelith",
     text: "Callin ha hecho un muy buen papel de líder en lo poco que llevamos juntos, realmente lo aprecio, soy capaz de entender el éxito que ha tenido el grupo, además su forma de tomar las riendas con Liora, realmente es un líder nato, el viaje me hace tener fe en que la investigación será un paseo.",
-    background: "../assets/Background/",
+    background: "../assets/Background/Inn.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1088,7 +1106,7 @@ const scene=[
 {
     name: "Kaelith",
     text: "Tras pedir los cuartos el gerente asigno al grupo dos cuartos, Callin dijo que las chicas en uno y los chicos en el otro, pero la señora Highgaze va a estar en el cuarto con ellos, dijo algo de tener que vigilar a los chicos para que no entren a nuestro cuarto a escondidas, me gusta creer que lo dijo de broma, pero el tono monótono de eHighgaze hace complicado saber si lo decía en serio. ",
-    background: "../assets/Background/",
+    background: "../assets/Background/Inn.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1096,15 +1114,15 @@ const scene=[
 {
     name: "Gerente",
     text: "Señoritas, este va a ser su cuarto.",
-    background: "../assets/Background/",
-    character1: "Gerente",
+    background: "../assets/Background/Room.jpg",
+    character1: "",
     character2: "",
     choices:[]
 },
 {
     name: "Kaelith",
     text: "Abriendo la puerta del cuarto, nos encontramos con acogedor cuarto. Tres camas lo suficientemente separadas con una pequeña mesa de noche para cada una, un tocador con espejo cerca de la entrada y una repisa ideal para dejar el equipo. ",
-    background: "../assets/Background/",
+    background: "../assets/Background/Room.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1112,7 +1130,7 @@ const scene=[
 {
     name: "Kaelith",
     text: "No puedo pedir más, el hostal es de la mayor calidad, indomable fury está muy bien organizado y desde que Liora se calmó el ambiente está más relajado, ¡Incluso cuenta con baño privado cada cuarto! Lo que pensé que iba a ser una pesadilla de viaje parece que serán unas agradables vacaciones en el campo.",
-    background: "../assets/Background/",
+    background: "../assets/Background/Room.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1120,7 +1138,7 @@ const scene=[
 {
     name: "Liora",
     text: "¡Me quedo con la esquina!",
-    background: "../assets/Background/",
+    background: "../assets/Background/Room.jpg",
     character1: "",
     character2: "../assets/Characters/Liora_sprite1.png",
     choices:[]
@@ -1128,7 +1146,7 @@ const scene=[
 {
     name: "Kaelith",
     text: "Rápidamente Liora puso sus pertenencias en la cama de la esquina, la más alejada de la puerta. A lo que Thalia la siguió sin decir ni una palabra coloco sus pertenencias en la cama de la otra esquina. Parece ser que me voy a quedar entre las dos, en la cama central.",
-    background: "../assets/Background/",
+    background: "../assets/Background/Room.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1136,7 +1154,7 @@ const scene=[
 {
     name: "Kaelith",
     text: "Tras acomodar mis cosas en la habitación y justo cuando me disponía a encerrarme a leer me vi interrumpida por un fuerte grito viniendo del comedor.",
-    background: "../assets/Background/",
+    background: "../assets/Background/Room.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1144,7 +1162,7 @@ const scene=[
 {
     name: "Kaelith",
     text: "Ignore el ruido y no paso ni un minuto cuando volvió a sonar, esta vez más claro me di cuenta que era Callin, estaba llamándonos al comedor.",
-    background: "../assets/Background/",
+    background: "../assets/Background/Room.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1152,7 +1170,7 @@ const scene=[
 {
     name: "Kaelith",
     text: "Levantándome de mi cama fue cuando me di cuenta que me encontraba sola en la habitación, Liora y Thalia no se veían en ni un lado. No escuche cuando salieron, pero tampoco es que estuviera prestando especial atención.",
-    background: "../assets/Background/",
+    background: "../assets/Background/Room.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1160,7 +1178,7 @@ const scene=[
 {
     name: "Kaelith",
     text: "Baje rápidamente al comedor no sin haber recibido dos llamadas más.",
-    background: "../assets/Background/",
+    background: "../assets/Background/Room.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1168,15 +1186,15 @@ const scene=[
 {
     name: "Callin",
     text: "¿DÓNDE ESTAN LAS OTRAS DOS?",
-    background: "../assets/Background/",
+    background: "../assets/Background/Inn.jpg",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },
 {
     name: "Kaelith",
     text: "No lo sé, supuse que estarían aquí.",
-    background: "../assets/Background/",
+    background: "../assets/Background/Inn.jpg",
     character1: "",
     character2: "",
     choices:[]
@@ -1184,7 +1202,7 @@ const scene=[
 {
     name: "Kaelith",
     text: "Callin mantuvo su característica actitud y me dijo que fuera a buscarlas, si quería buscar en el hostal o fuera, mientras le ordeno a Cavne y Arlyse que prepararan los suministros para mañana. ",
-    background: "../assets/Background/",
+    background: "../assets/Background/Inn.jpg",
     character1: "",
     character2: "",
     choices:["Voy a buscar fuera ","Voy a buscar dentro"]
@@ -1195,16 +1213,16 @@ const scene=[
         {    
         name: "Callin",
         text: "VAS FUERA, No dudes en hacer una señal si se pone peligroso.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Inn.jpg",
         character1: "",
-        character2: "Callin",
+        character2:"../assets/Characters/Callin_sprite1.png",
         choices:[],
         affection:2 //Liora
     },
         {    
         name: "Kaelith",
         text: "Decidí buscar en los cuartos del hostal, seguramente encontraba a alguna de las dos dentro. Además, me ahorraba salir a la intemperie a estas horas, si, era la mejor opción. ",
-        background: "../assets/Background/",
+        background: "../assets/Background/Inn.jpg",
         character1: "",
         character2: "",
         choices:[],
@@ -1216,14 +1234,14 @@ const scene=[
         {    
         name: "Arlyse",
         text: "Buen viaje.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Inn.jpg",
         character1: "",
-        character2: "Arlyse",
+        character2:"../assets/Characters/Arlyse_sprite2.png",
         choices:[]},
         {    
         name: "Kaelith",
         text: "Empecé buscando en los cuartos, en el segundo piso, primero nuestro cuarto, luego el cuarto de Callin y los demás que se encontraban vacíos, no vi a nadie, por lo que decidí preguntarle al gerente si existía algún otro cuarto.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Room.jpg",
         character1: "",
         character2: "",
         choices:[]}
@@ -1234,15 +1252,15 @@ const scene=[
         {    
         name: "Kaelith",
         text: "…",
-        background: "../assets/Background/",
+        background: "../assets/Background/Inn.jpg",
         character1:"../assets/Characters/Kaelith_sprite1.png",
         character2: "",
         choices:[]},
         {    
         name: "Gerente",
         text: "Hay una bodega en el ático, aunque dudo que encuentres a alguien ahí.",
-        background: "../assets/Background/",
-        character1: "Gerente",
+        background: "../assets/Background/inn.jpg",
+        character1: "",
         character2: "",
         choices:[]}
     ]
@@ -1252,7 +1270,7 @@ const scene=[
         {    
         name: "Kaelith",
         text: "Al cerrar la puerta del hostal, frente a mí se presentaba la misma llanura a la que habíamos llegado unas horas antes. Al ver hacia arriba las estrellas se podían ver perfectamente, era una noche despejada, dando a la oscuridad de la noche un brillo lo cual facilitaba la visión.",
-        background: "../assets/Background/",
+        background: "../assets/Background/Plains.png",
         character1: "",
         character2: "",
         choices:[]},
@@ -1765,7 +1783,7 @@ const scene=[
     text: "¿Cavne, empacaste todo lo que te pedí? ",
     background: "../assets/Background/",
     character1: "Cavne",
-    character2: "Arlyse",
+    character2:"../assets/Characters/Arlyse_sprite2.png",
     choices:[]
 },
 {
@@ -1797,7 +1815,7 @@ const scene=[
     text: "¡JA JA JA! El carruaje no entraría por el espesor del bosque, pero si todo va bien deberíamos estar llegando.",
     background: "../assets/Background/",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },
 {
@@ -1813,7 +1831,7 @@ const scene=[
     text: "Thalia, puedes verificar si hay movimiento inusual en las plantas altas.",
     background: "../assets/Background/",
     character1: "",
-    character2: "Arlyse",
+    character2:"../assets/Characters/Arlyse_sprite2.png",
     choices:[]
 },
 {
@@ -1829,7 +1847,7 @@ const scene=[
     text: "Kaelith, cariño, puedes darle caída lenta a Thalia. ",
     background: "../assets/Background/",
     character1:"../assets/Characters/Kaelith_sprite1.png",
-    character2: "Arlyse",
+    character2:"../assets/Characters/Arlyse_sprite2.png",
     choices:[]
 },
 {
@@ -1861,7 +1879,7 @@ const scene=[
     text: "Cavne vigila la retaguardia. Liora cuida a la maga. Arlyse, Thalia, hagan lo mismo de siempre. Yo liderare el grupo.",
     background: "../assets/Background/",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },
 {
@@ -1892,7 +1910,7 @@ const scene=[
     text: "Tomemos una formación ofensiva antes de entrar. Liora ven a la vanguardia conmigo.",
     background: "../assets/Background/",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },{
     name: "Liora",
@@ -1920,7 +1938,7 @@ const scene=[
     text: "Parece que tenemos un plan, tres… dos… uno… ¡Vamos!",
     background: "../assets/Background/",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },{
     name: "Kaelith",
@@ -1949,7 +1967,7 @@ const scene=[
     text: "¡HOLA!",
     background: "../assets/Background/",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },{
     name: "Kaelith",
@@ -1978,7 +1996,7 @@ const scene=[
     text: "Vaya, vaya, eso estuvo cerca.",
     background: "../assets/Background/",
     character1: "",
-    character2: "Arlyse",
+    character2:"../assets/Characters/Arlyse_sprite2.png",
     choices:[]
 },{
     name: "Liora",
@@ -1999,14 +2017,14 @@ const scene=[
     text: "¿Qué hacemos?",
     background: "../assets/Background/",
     character1:"../assets/Characters/Kaelith_sprite1.png",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },{
     name: "Callin",
     text: "Voy a revisar los apuntes, dame un momento",
     background: "../assets/Background/",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[],
     cancion:"chill"
 },{
@@ -2079,7 +2097,7 @@ const scene=[
     text: "¡Todos tomen posición!",
     background: "../assets/Background/",
     character1: "",
-    character2: "Callin",
+    character2:"../assets/Characters/Callin_sprite1.png",
     choices:[]
 },{
     name: "Kaelith",
@@ -2142,7 +2160,7 @@ const scene=[
     text: "Cavne, necesito que apliques presión en…",
     background: "../assets/Background/",
     character1:"../assets/Characters/Kaelith_sprite1.png",
-    character2: "Arlyse",
+    character2:"../assets/Characters/Arlyse_sprite2.png",
     choices:[]
 },{
     name: "Kaelith",
