@@ -412,15 +412,15 @@ const scene=[
     name: "Callin Wisestride",
     text: "¡JA JA JA! ¡No es normal ver una paladina del santísimo por estos lugares!",
     background: "../assets/Background/tavern.jpg",
-    character1: "Callin",
-    character2: "",
+    character1: "",
+    character2: "../assets/Characters/Callin_sprite1.png",
     choices:[]
 },
 {
     name: "Liora",
     text: "Psst y ustedes quienes son, espero que no me hagan perder el tiempo.",
     background: "../assets/Background/tavern.jpg",
-    character1: "Callin",
+    character1: "",
     character2: "../assets/Characters/Liora_sprite1.png",
     choices:[]
 },
@@ -428,7 +428,7 @@ const scene=[
     name: "Callin",
     text: "No sabía que las santas hablaban de esa forma. ¡JA JA JA!, aunque en mi experiencia estoy seguro que buscas algo y es posible que podamos ayudarte.",
     background: "../assets/Background/tavern.jpg",
-    character1: "Callin",
+    character1: "",
     character2: "../assets/Characters/Liora_sprite1.png",
     choices:[]
 },
