@@ -202,7 +202,7 @@ resetbutton.addEventListener('click', () =>{
     dialogueText.textContent="Juego reiniciado, da click para iniciar";
     character1.classList.toggle('hidden');
     character2.classList.toggle('hidden');
-    backgroundImage.src="../assets/Background/city.jpg";
+    backgroundImage.src="../assets/Background/City.jpg";
     nametext.textContent="";
 
 })
@@ -225,7 +225,7 @@ const scene=[
 {
     name: "",
     text: "Regresando de la academia mágica, me di cuenta que olvidé mi cuaderno. Realmente no me importa, tampoco es que tome apuntes, pero va a ser un dolor tener que agradecer a la persona que me lo regrese mañana, espero que no pase.",
-    background: "../assets/Background/city.jpg",
+    background: "../assets/Background/City.jpg",
     character1: "",
     character2: "",
     choices:[],
